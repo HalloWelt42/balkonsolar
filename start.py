@@ -20,6 +20,8 @@ if data["today"] > 1200:
     sun = "☀️"
 
 playNow = "🔋 {:3.0f} kWh & heute ".format(kWh / 1000)
+if data["record"] < data["today"]:
+    playNow += "🏆 "
 playNow += " " + sun + "{:4.0f} Wh".format(data["today"])
 
 print(kWh)
